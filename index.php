@@ -1,12 +1,12 @@
 <?php
-require 'Functions.php';
+//entry point into the app
 
+require 'Functions.php';
 $query = require 'Bootstrap.php';
 
-$tasks = $query->selectAll('todos');
-
-// $tasks = fetchAllTasks($pdo);
-// die_dump($tasks);
-
-
-require 'index.view.php';
+$routes = [
+    '' => 'controllers/index.php',
+    'about' => 'controllers/about.php',
+    'culture' => 'controllers/about-culture.php',
+    'contact' => 'controllers/contact.php'
+];
