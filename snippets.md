@@ -19,4 +19,11 @@
 </ul>
 ```
 
-##
+## tinkering
+
+print_r($val);
+var_dump($val);
+
+echo <pre> var_dump(\$val) </pre>
+
+die(var_dump(\$var)); //this exists out of it.

@@ -18,6 +18,7 @@
     </header>
 
 
+    <!-- standard loop -->
     <ul>
         <?php foreach ($names as $name) : ?>
 
@@ -26,6 +27,15 @@
         <?php endforeach; ?>
     </ul>
 
+
+    <!-- extracting key-value pairs -->
+    <ul>
+        <?php foreach ($person as $key => $val) : ?>
+
+            <li> <strong><?= $key ?> </strong> : <?= $val; ?> </li>
+
+        <?php endforeach; ?>
+    </ul>
 
 
 
