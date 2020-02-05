@@ -1,13 +1,12 @@
 <?php
-require 'functions.php';
-require 'Task.php';
+require 'Functions.php';
 
-$query = require 'bootstrap.php';
+$query = require 'Bootstrap.php';
 
-$tasks = $query->selectAll('todos', 'Task');
+$tasks = $query->selectAll('todos');
 
 // $tasks = fetchAllTasks($pdo);
-die_dump($tasks);
+// die_dump($tasks);
 
 
 require 'index.view.php';
