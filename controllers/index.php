@@ -1,8 +1,8 @@
 <?php
 
-$tasks = $query->selectAll('todos');
+$tasks = $app['database']->selectAll('todos');
 
 // $tasks = fetchAllTasks($pdo);
 // die_dump($tasks);
 
-require 'view/index.view.php';
+require 'views/index.view.php';

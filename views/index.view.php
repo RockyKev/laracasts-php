@@ -8,7 +8,7 @@
     <title>Rocky's test page</title>
     <meta name="description" content="Rocky's Test Page">
 
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="public/css/styles.css">
 
 </head>
 
@@ -41,7 +41,7 @@
 
 
 
-    <script src="js/scripts.js"></script>
+    <script src="public/js/scripts.js"></script>
 </body>
 
 </html>

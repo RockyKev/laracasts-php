@@ -1,10 +1,16 @@
 <?php
 
-$config = require 'config.php';
+$app = [];
 
-require 'database/Connection.php'; //database connection -- local
-require 'database/QueryBuilder.php';
+$app['config'] = require 'config.php';
 
-$pdo = Connection::make($config['database']);
 
-return new QueryBuilder($pdo);
+
+require 'core/Router.php';
+require 'core/Request.php';
+require 'core/database/Connection.php'; //database connection -- local
+require 'core/database/QueryBuilder.php';
+
+$pdo = Connection::make($app['config']['database']);
+
+$app['database'] = new QueryBuilder($pdo);

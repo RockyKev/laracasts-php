@@ -1,3 +1,6 @@
 <?php
 
-require 'view/about-culture.view.php';
+$name = 'Laracasts';
+
+
+require 'views/about-culture.view.php';
