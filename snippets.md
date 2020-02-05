@@ -40,6 +40,12 @@ $task = [
 
 ```
 
+## grab params
+
+```
+$name = htmlspecialchars($_GET['name']); //grab params escapes
+```
+
 ## endif
 
 ```
@@ -69,4 +75,26 @@ echo <pre> var_dump($val) </pre>
 
 ```
 die(var_dump(\$var)); //this exists out of it.
+```
+
+## Making connections
+
+```
+class Connection
+{
+    public function make()
+}
+//call this by using
+//$connection = new Connection();
+//$connection->make();
+
+```
+
+```
+class Connection
+{
+    public static function make()
+}
+
+//call this by using Connection::make();
 ```

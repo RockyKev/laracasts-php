@@ -2,12 +2,12 @@
 require 'functions.php';
 require 'Task.php';
 
-// $name = htmlspecialchars($_GET['name']); //grab params escapes
+$query = require 'bootstrap.php';
 
-$pdo = connectToDb();
+$tasks = $query->selectAll('todos', 'Task');
 
-$tasks = fetchAllTasks($pdo);
+// $tasks = fetchAllTasks($pdo);
+die_dump($tasks);
 
-// die_dump($tasks);
 
 require 'index.view.php';
