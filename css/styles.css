@@ -3,3 +3,7 @@ header {
   padding: 2em;
   background: #e3e3e3;
 }
+
+.strikethrough {
+  text-decoration: line-through;
+}
