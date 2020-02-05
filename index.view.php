@@ -13,39 +13,6 @@
 </head>
 
 <body>
-
-    <header> Hello, <?= $greeting; ?>
-    </header>
-
-
-    <!-- standard loop -->
-    <ul>
-        <?php foreach ($names as $name) : ?>
-
-            <li> <?= $name ?></li>
-
-        <?php endforeach; ?>
-    </ul>
-
-
-    <!-- extracting key-value pairs -->
-    <ul>
-        <?php foreach ($person as $key => $val) : ?>
-
-            <li> <strong><?= $key ?> </strong> : <?= $val; ?> </li>
-
-        <?php endforeach; ?>
-    </ul>
-
-    <!-- Homework -->
-
-    <ul>
-        <li><strong>Name:</strong> <?= $task['title']; ?> </li>
-        <li><strong>Due Date:</strong> <?= $task['due']; ?></li>
-        <li><strong>Person Responsible:</strong> <?= $task['assigned_to']; ?></li>
-        <li><strong>Completed?</strong> <?= $task['completed'] ? '<span class="icon">&#9989</span>' : 'Incomplete'; ?> </li>
-    </ul>
-
     <ul>
         <?php foreach ($tasks as $task) : ?>
 
