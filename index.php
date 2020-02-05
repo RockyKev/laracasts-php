@@ -2,7 +2,15 @@
 
 $name = htmlspecialchars($_GET['name']); //grab params escapes
 
-$greeting = "THE BIG SHOW $name";
 
+$names = [
+    'Rocky', 'Dave', 'Sarah'
+];
+
+$greeting = '';
+
+foreach ($names as $name) {
+    $greeting .= "THE BIG SHOW $name! ";
+}
 
 require 'index.view.php';
