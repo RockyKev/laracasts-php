@@ -1,19 +1,6 @@
-<!doctype html>
+<?php require('partials/head.php'); ?>
 
-<html lang="en">
 
-<head>
-    <meta charset="utf-8">
+<h1> About Page </h1>
 
-    <title>Contact Page</title>
-    <meta name="description" content="Contact page">
-
-    <link rel="stylesheet" href="css/styles.css">
-
-</head>
-
-<body>
-    <h1> About Page </h1>
-</body>
-
-</html>
+<?php require('partials/footer.php'); ?>
