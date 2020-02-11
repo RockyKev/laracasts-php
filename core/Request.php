@@ -6,6 +6,18 @@ class Request
 
     public static function uri()
     {
-        return $uri = trim($_SERVER['REQUEST_URI'], '/');
+
+        // /names?names=Jeffery
+
+        return trim(
+            parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH),
+            '/'
+        );
+    }
+
+    public static function method()
+
+    {
+        $_SERVER['REQUEST_METHOD']; //GET OR POST
     }
 }

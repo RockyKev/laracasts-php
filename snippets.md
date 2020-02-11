@@ -98,3 +98,140 @@ class Connection
 
 //call this by using Connection::make();
 ```
+
+## Array filters
+
+```
+class Post
+
+{
+    public $title;
+    public $author;
+    public $published;
+
+    public function __construct($title, $author, $published)
+    {
+        $this->title = $title;
+        $this->author = $author;
+        $this->published = $published;
+    }
+}
+
+$posts = [
+    new Post('My First Post', true),
+    new Post('My Second Post', true),
+    new Post('My Third Post', true),
+    new Post('My Fourth Post', false)
+];
+
+```
+
+Using this data set.
+
+### array_filer($thing, $function) ----> BOOLEAN RESULT
+
+```
+//use a array filter and closure to return the thing you want
+$unpublishedPosts = array_filter($posts, function ($post) {
+
+    return !$post->published;
+});
+
+var_dump($unpublishedPosts);
+```
+
+### array_map ($function, $thing) -----> TRANSFORM DATA
+
+It's reversed - where the callback function is
+
+```
+$modified = array_map(function ($post) {
+
+    $post->title = true;
+    return $post;
+}, $posts);
+```
+
+It's the same as
+
+```
+foreach ($posts as $post) {
+
+    $post->title = true;
+};
+```
+
+So why use array map?
+
+```
+$modified = array_map(function ($post) {
+
+    $post->title = true;
+    return (array) $post;
+}, $posts);
+```
+
+That example above will return a array of items instead of an object of items.
+
+```
+$modified = array_map(function ($post) {
+
+    return ['title' => $post->title];
+}, $posts);
+```
+
+Return ONLY the title of the post.
+
+### array_columns ----> FILTER DATA - pull value
+
+```
+$titlesOnly = array_map(function ($post) {
+    return $post->title;
+}, $posts);
+
+
+$titlesOnlyWithColumns = array_column($posts, 'title');
+
+die_dump($titlesOnlyWithColumns);
+
+```
+
+### Turn objects into array
+
+```
+foreach ($posts as $index => $post) {
+
+    $posts[$index] = (array) $post;
+}
+```
+
+OR
+
+```
+$arrayPosts = array_map(function ($post) {
+    return (array) $post;
+}, $posts);
+```
+
+### get all the authors
+
+```
+$authors = array_column($posts, 'author');
+```
+
+```
+$authors = array_column($posts, 'author', 'title');
+```
+
+If you want it to be an associative array (key->value)
+
+### Types of REquest
+
+```var_dump($_SERVER);
+
+var_dump($_REQUEST);
+
+//great for search
+var_dump($_GET['name']);
+var_dump($_GET['age']);
+```
